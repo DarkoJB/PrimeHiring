@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div class="container">
+    <div class="row">
+        <form action="{{url_for('team_edit', id = team.id)}}" method="POST">
+            <h3>Edit Team</h3>
+            <div class="form-group">
+                <label for="exampleInputText1">Team Name</label>
+                <input type="text" class="form-control" id="exampleInputText1" name="team_name" value="{{team.team_name}}" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputText1">Start Date</label>
+                <input type="date" class="form-control" id="date" name="start_date" value="{{team.start_date}}" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputText1">End Date</label>
+                <input type="date" class="form-control" id="date" name="end_date" value="{{team.end_date}}" required>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary">Edit</button>
+        </form>
+    </div>
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,64 @@
+{%extends 'base.html'%}
+
+{%block content%}
+<div class="container">
+    <div class="my-1 justify-content-end button_dev">
+        <a href="{{url_for('developer_new')}}"  type="button" class="btn btn-primary btn-sm">Add new developer</a>
+    </div>
+    <form action="{{url_for('hiredev', id = developers.id)}}" method="post">
+        <div class="row">
+            <table class="table table-striped">
+                <thead class="thead_width">
+                    <tr>
+                        <!-- name, email, phone_number, location, price, technology, experience, language -->
+                        <th scope="col">Hire</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Phone Number</th>
+                        <th scope="col">Location</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Technology</th>
+                        <th scope="col">Experience</th>
+                        <th scope="col">Language</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for developer in developers %}
+                    <tr class="table_row">
+                        <td>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="{{developer.name}}" name="check_devs" id="flexCheckDefault">
+                              </div>
+                        </td>
+                        <td><a href="{{ url_for('developer', id = developer.id )}}">{{developer.name}}</a></td>
+                        <td>{{developer.email}}</td>
+                        <td>{{developer.phone_number}}</td>
+                        <td>{{developer.location}}</td>
+                        <td>{{developer.price}}</td>
+                        <td>{{developer.technology}}</td>
+                        <td>{{developer.experience}}</td>
+                        <td>{{developer.language}}</td>
+                        <td class="row td_row">
+                            <a href="{{url_for('developer_edit', id = developer.id)}}" role="button" class="text-warning mx-1 edit_button">
+                                <i class="fas fa-edit"></i>
+                            </a>
+                            <a href="{{url_for('developer_delete', id = developer.id)}}" role="button" class="text-warning mx-1 delete_button">
+                                <i class="fas fa-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <select name="team_id" id="team_id" class="form-control">
+                <option>Choose Team</option>
+                {% for team in team %}
+                <option value="{{team.id}}">{{team.team_name}}</option>
+                {% endfor %}
+            </select>
+            <button type="submit" class="btn btn-primary submit_button">Hire</button>
+        </div>
+    </form>
+</div>
+
+{%endblock%}

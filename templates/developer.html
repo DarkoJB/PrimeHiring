@@ -1,0 +1,17 @@
+{%extends 'base.html'%}
+
+{%block content%}
+<div class="container">
+        <h2 name = "name">{{developer.name}}</h2>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">{{developer.email}}</li>
+            <li class="list-group-item">{{developer.phone_number}}</li>
+            <li class="list-group-item">{{developer.location}}</li>
+            <li class="list-group-item">{{developer.price}}</li>
+            <li class="list-group-item">{{developer.technology}}</li>
+            <li class="list-group-item">{{developer.experience}}</li>
+            <li class="list-group-item">{{developer.language}}</li>
+          </ul>
+</div>
+
+{%endblock%}

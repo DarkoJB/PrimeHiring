@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div class="container">
+    <div class="row">
+        <form action="{{url_for('developer_new')}}" method="POST">
+            <h3>New Developer</h3>
+            <div class="form-group">
+                <label for="exampleInputText1">Name</label>
+                <input type="text" class="form-control" id="exampleInputText1" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputText1">Phone number</label>
+                <input type="text" class="form-control" id="exampleInputText1" name="phone_number" required>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Location</label>
+              <input type="text" class="form-control" id="exampleInputText1" name="location" required>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Price</label>
+              <input type="text" class="form-control" id="exampleInputText1" name="price" required>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Technology</label>
+              <input type="text" class="form-control" id="exampleInputText1" name="technology" required>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Experience</label>
+              <input type="text" class="form-control" id="exampleInputText1" name="experience" required>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Language</label>
+              <input type="text" class="form-control" id="exampleInputText1" name="language" required>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary">Create</button>
+        </form>
+    </div>
+</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div class="container">
+    <div class="row">
+        <form action="{{url_for('team_new')}}" method="POST">
+            <h3>New Team</h3>
+            <div class="form-group">
+                <label for="exampleInputText1">Team Name</label>
+                <input type="text" class="form-control" id="exampleInputText1" name="team_name" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputText1">Start Date</label>
+                <input type="date" class="form-control" id="date" name="start_date" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputText1">End Date</label>
+                <input type="date" class="form-control" id="date" name="end_date" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputText1">Developers</label>
+                <textarea class="form-control" aria-label="With textarea" name="developers"></textarea>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary">Create</button>
+        </form>
+    </div>
+</div>
+
+
+
+{% endblock %}
