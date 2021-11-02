@@ -25,4 +25,4 @@ Launch XAMPP and then start the Apache and MySQL services
 
 Go to the directory of the project files in Powershell and run python primehiring.py
 
-If you have done everything correctly the app should run and a powershell message will display telling you the port that it's running on.
+If you have done everything correctly the app should run and a powershell message will display telling you the port that it's running on (e.g. http://127.0.0.1:5000/developers).
